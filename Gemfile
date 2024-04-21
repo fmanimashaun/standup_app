@@ -27,7 +27,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -44,9 +44,41 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# gem that includes a view helper and javascript helper to display relative time (i.e. ‘updated 2 minutes ago’)
+gem 'local_time'
+
+gem 'devise'
+
+# Devise Invitable is an add-on gem that will allow you to have an invitation system to have users invite other users.
+gem 'devise_invitable'
+
+# Rolify allows us to assign roles such as User or Admin.
+gem 'rolify'
+
+# CanCanCan will enable us to apply authorization policies.
+gem 'cancancan'
+
+gem 'immutable-struct'
+
+# gem allows us to run background jobs backed by a Redis queue
+gem 'sidekiq'
+gem 'sinatra', require: nil
+
+gem 'gravatar_image_tag'
+
+gem 'money-rails'
+
+gem 'slack-notifier'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'simplecov', :require => false, :group => :test
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -58,5 +90,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'letter_opener'
+  gem 'foreman'
 end
 
+gem 'rack-cors', :require => 'rack/cors'
